@@ -27,6 +27,17 @@ print out a calendar for April in 2015, but if you omit either the year or both 
 it should use today’s date to get the month and year.
 """
 
+# accepts a possible of 0, 1, 2 args
+# [month] and [year]
+
+# case 1: expect that if user enters nothing, the current month's calendar will be printed
+
+# case 2: expect that if the user specifies only one argument, assume that this is a month and render the calendar for that month of the current year. Ie. assume current year, assume arg is month
+
+# case 3: expect that if the user specifies two args, assume this is month & year args
+
+# catch-case: if something breaks, the function should print a statement indicating expected arg format
+
 import sys
 import calendar
 from datetime import datetime
