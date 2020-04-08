@@ -4,7 +4,7 @@ render a calendar to your terminal.
 https://docs.python.org/3.6/library/calendar.html
 
 Write a program that accepts user input of the form
-  `14_cal.py [month] [year]`
+  `14_cal.py [month] [year]` - 1
 and does the following:
  - If the user doesn't specify any input, your program should
    print the calendar for the current month. The 'datetime'
@@ -16,7 +16,7 @@ and does the following:
    month and year.
  - Otherwise, print a usage statement to the terminal indicating
    the format that your program expects arguments to be given.
-   Then exit the program.
+   Then exit the program. - 2
 
 Note: the user should provide argument input (in the initial call to run the file) and not 
 prompted input. Also, the brackets around year are to denote that the argument is
@@ -59,21 +59,24 @@ def gimmeCal(month=datetime.today().month, year=datetime.today().year):
     else:
         print('Inputs could not be converted to integer, double check and re-boot program')
 
-month = input('What is the month? ')
-year = input('What is the year? ')
-
-if(not month and not year):
+if(len(sys.argv) == 1):
     gimmeCal()
+    exit()
 
-elif(month and not year):
-    gimmeCal(month=month)
+if(len(sys.argv) == 2):
+    try:
+        gimmeCal(month = int(sys.argv[1]))
+    except:
+        print('Month value cannot be converted to integer')
+        exit()
 
-elif(not month and year):
-    gimmeCal(year=year)
-
-else:
-    gimmeCal(month=month, year=year)
-
-# empty strings break, they don't trigger default input - fixed
-# strings that can't be converted to int break, conversion should occur within func
-# use sys to further link functionality to terminal
+if(len(sys.argv) == 3):
+    try:
+        int(sys.argv[1])
+        try:
+            gimmeCal(month = int(sys.argv[1]), year = int(sys.argv[2]))
+        except:
+            print('Year value cannot be converted to integer')
+    except:
+        print('Month value cannot be converted to integer')
+        exit()

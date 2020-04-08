@@ -11,6 +11,7 @@ import sys
 
 # Print out the command line arguments in sys.argv, one per line:
 # YOUR CODE HERE
+# Space separated arguments
 for arg in sys.argv:
     print(arg)
 
