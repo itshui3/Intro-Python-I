@@ -48,17 +48,13 @@ import sys
 import calendar
 from datetime import datetime
 
-# use datetime to get aware data about current month/year
-def gimmeCal(month=datetime.today().month, year=datetime.today().year):
-    print(calendar.month(year, month))
-
 if(len(sys.argv) == 1):
-    gimmeCal()
+    print(calendar.month(datetime.today().year, datetime.today().month))
     exit()
 
 if(len(sys.argv) == 2):
     try:
-        gimmeCal(month = int(sys.argv[1]))
+        print(calendar.month(datetime.today().year, int(sys.argv[1])))
     except:
         print('Month value cannot be converted to integer')
         exit()
@@ -67,7 +63,7 @@ if(len(sys.argv) == 3):
     try:
         int(sys.argv[1])
         try:
-            gimmeCal(month = int(sys.argv[1]), year = int(sys.argv[2]))
+            print(calendar.month(int(sys.argv[2]), int(sys.argv[1])))
         except:
             print('Year value cannot be converted to integer')
     except:
