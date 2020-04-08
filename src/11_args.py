@@ -94,11 +94,8 @@ def f3_1(a, b=1):
 
 # # YOUR CODE HERE
 def f4(**kwargs):
-    for key in kwargs:
-        if(type(kwargs[key]) == dict):
-            print(key)
-        else:
-            print(f"key: {key}, value: {kwargs[key]}")
+    for key, value in kwargs.items():
+        print(f"key: {key}, value: {value}")
 
 
 # # Should print
@@ -120,3 +117,15 @@ d = {
 # # How do you have to modify the f4 call below to make this work?
 f4(**d)
 f4(monster=d["monster"], hp=d["hp"])
+
+# def f5(**stuff):
+#     print(stuff)
+#     for thing in stuff:
+#         print(thing)
+
+# bun = {
+#     bat: "bat",
+#     cat: "cat"
+# }
+
+# f5(**bun)

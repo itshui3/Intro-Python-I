@@ -12,6 +12,7 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # YOUR CODE HERE
 foo = open('./src/foo.txt', 'r')
 fooReadable = foo.read()
+foo.close()
 print(foo)
 print(fooReadable)
 
@@ -21,8 +22,10 @@ print(fooReadable)
 # sure that it contains what you expect it to contain
 
 # YOUR CODE HERE
-bar = open('./src/bar.txt', 'w+')
-bar.write('Hi, this is some text')
+# bar = open('./src/bar.txt', 'w+')
+# bar.write('Hi, this is some text')
+with open("./src/bar.txt", "w+") as bar:
+  bar.write("Hi, this is some text")
 
 #Notes
 
