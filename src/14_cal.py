@@ -50,14 +50,7 @@ from datetime import datetime
 
 # use datetime to get aware data about current month/year
 def gimmeCal(month=datetime.today().month, year=datetime.today().year):
-    #how do I check if it can be turned into an int before attempting so?
-    intYear = int(year)
-    intMonth = int(month)
-
-    if(type(intYear) == int and type(intMonth) == int):
-        print(calendar.month(intYear, intMonth))
-    else:
-        print('Inputs could not be converted to integer, double check and re-boot program')
+    print(calendar.month(year, month))
 
 if(len(sys.argv) == 1):
     gimmeCal()
