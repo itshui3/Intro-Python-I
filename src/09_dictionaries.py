@@ -59,6 +59,7 @@ for waypoint in waypoints:
     print(waypoint)
     if(waypoint["name"] == "a place"):
         waypoint["name"] = "not a real place"
+        waypoint["lon"] = -130
         print(waypoint)
         break
 
