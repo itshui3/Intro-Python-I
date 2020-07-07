@@ -10,6 +10,11 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # Note: pay close attention to your current directory when trying to open "foo.txt"
 
 # YOUR CODE HERE
+foo = open('./src/foo.txt', 'r')
+fooReadable = foo.read()
+foo.close()
+print(foo)
+print(fooReadable)
 
 # Open up a file called "bar.txt" (which doesn't exist yet) for
 # writing. Write three lines of arbitrary content to that file,
@@ -17,3 +22,13 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # sure that it contains what you expect it to contain
 
 # YOUR CODE HERE
+# bar = open('./src/bar.txt', 'w+')
+# bar.write('Hi, this is some text')
+with open("./src/bar.txt", "w+") as bar:
+  bar.write("Hi, this is some text")
+
+#Notes
+
+#Python can read/write files, but before that can happen we need access to it through Python's built-in open() function
+
+#open() returns object of the file type(?) or an IOError
